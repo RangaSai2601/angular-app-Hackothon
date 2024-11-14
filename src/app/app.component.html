@@ -1,6 +1,4 @@
-<div class="d-flex my-3 justify-content-around">
-  <button id="startButton" (click)="startListening()" class="btn-success">Start Voice Input</button>
-</div>
-<div id="output">
-  {{resultJson | json}}
+<div>
+  <app-gen-ai-populate [formFieldsData]="formFieldsData">
+  </app-gen-ai-populate>
 </div>

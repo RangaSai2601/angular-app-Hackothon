@@ -1,0 +1,104 @@
+{
+    "formFields": [
+        {
+          "name": "Job Type",
+          "type": "Dropdown",
+          "possible values": [
+            "Intern",
+            "Campus"
+          ],
+          "is Mandatory": true,
+          "regex pattern": "",
+          "value": ""
+        },
+        {
+          "name": "Department",
+          "type": "Dropdown",
+          "possible values": [
+            "Flipkart Health plus",
+            "Flipkart Delivery",
+            "Flipkart Grocery",
+            "Technology",
+            "Implementation"
+          ],
+          "is Mandatory": true,
+          "regex pattern": "",
+          "value": ""
+        },
+        {
+          "name": "Location",
+          "type": "text",
+          "possible values": null,
+          "is Mandatory": true,
+          "regex pattern": "",
+          "value": ""
+        },
+        {
+          "name": "Designation",
+          "type": "text",
+          "possible values": null,
+          "is Mandatory": true,
+          "regex pattern": "",
+          "value": ""
+        },
+        {
+          "name": "Years of Experience",
+          "type": "number",
+          "possible values": null,
+          "is Mandatory": true,
+          "regex pattern": "",
+          "value": ""
+        },
+        {
+          "name": "skills",
+          "type": "array",
+          "possible values": null,
+          "is Mandatory": true,
+          "regex pattern": "",
+          "value": ""
+        },
+        {
+          "name": "Job description",
+          "type": "text area",
+          "possible values": null,
+          "is Mandatory": true,
+          "regex pattern": "",
+          "value": ""
+        },
+        {
+          "name": "Job description",
+          "type": "text area",
+          "possible values": null,
+          "is Mandatory": true,
+          "regex pattern": "",
+          "value": ""
+        },
+        {
+          "name": "Job visibility",
+          "type": "radio",
+          "possible values": [
+            "Normal",
+            "Enhanced",
+            "Private",
+            "Confidential"
+          ],
+          "is Mandatory": true,
+          "regex pattern": "",
+          "value": ""
+        },
+        {
+          "name": "Job Distributions",
+          "type": "multi select",
+          "possible values": [
+            "Naukri",
+            "LinkedIn",
+            "Hirist",
+            "Naukrigulf",
+            "Indeed"
+          ],
+          "is Mandatory": true,
+          "regex pattern": "",
+          "value": ""
+        }
+      ]
+}
