@@ -1,0 +1,81 @@
+<div class="d-flex my-3 justify-content-around">
+    <button id="startButton" (click)="startListening()" class="btn-success">Start Voice Input</button>
+</div>
+<div class="d-flex my-3 justify-content-around">
+    <ng-container *ngFor="let msg of conversation;index as idx">
+        <div *ngIf="idx>0">
+            {{msg.role}}:{{msg.content}}
+        </div>
+    </ng-container>
+</div>
+<div class="d-flex my-3 justify-content-around">
+    <h3>Create job form</h3>
+</div>
+
+<div class="form-container">
+    <form #createJobForm="ngForm" (keydown.enter)="$event.preventDefault()">
+      <ng-container *ngFor="let field of formFieldsData">
+        <div *ngIf="field.type === 'Dropdown'" class="form-field">
+            <mat-form-field appearance="outline">
+              <mat-label>{{ field.name }}</mat-label>
+              <mat-select [(ngModel)]="field.value" name="{{ makeUniqueFieldName(field.name) }}" required>
+                <mat-option *ngFor="let option of field['possible values']" [value]="option">
+                  {{ option }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+    
+          <div *ngIf="field.type === 'text'" class="form-field">
+            <mat-form-field appearance="outline">
+              <mat-label>{{ field.name }}</mat-label>
+              <input matInput [(ngModel)]="field.value" name="{{ makeUniqueFieldName(field.name) }}" required />
+            </mat-form-field>
+          </div>
+    
+          <div *ngIf="field.type === 'number'" class="form-field">
+            <mat-form-field appearance="outline">
+              <mat-label>{{ field.name }}</mat-label>
+              <input matInput type="number" [(ngModel)]="field.value" name="{{ makeUniqueFieldName(field.name) }}" required />
+            </mat-form-field>
+          </div>
+    
+          <div *ngIf="field.type === 'array'" class="form-field">
+            <mat-form-field appearance="outline">
+              <mat-label>{{ field.name }}</mat-label>
+              <input matInput placeholder="Enter comma-separated values" [(ngModel)]="field.value" name="{{ makeUniqueFieldName(field.name) }}" />
+            </mat-form-field>
+          </div>
+    
+          <div *ngIf="field.type === 'text area'" class="form-field">
+            <mat-form-field appearance="outline">
+              <mat-label>{{ field.name }}</mat-label>
+              <textarea matInput [(ngModel)]="field.value" name="{{ makeUniqueFieldName(field.name) }}" required></textarea>
+            </mat-form-field>
+          </div>
+    
+          <div *ngIf="field.type === 'radio'" class="form-field">
+            <label>{{ field.name }}</label>
+            <mat-radio-group [(ngModel)]="field.value" name="{{ makeUniqueFieldName(field.name) }}" required>
+              <mat-radio-button *ngFor="let option of field['possible values']" [value]="option">
+                {{ option }}
+              </mat-radio-button>
+            </mat-radio-group>
+          </div>
+    
+          <div *ngIf="field.type === 'multi select'" class="form-field">
+            <mat-form-field appearance="outline">
+              <mat-label>{{ field.name }}</mat-label>
+              <mat-select multiple [(ngModel)]="field.value" name="{{ makeUniqueFieldName(field.name) }}" required>
+                <mat-option *ngFor="let option of field['possible values']" [value]="option">
+                  {{ option }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+      </ng-container>
+  
+      <button mat-raised-button type="submit" color="primary">Submit</button>
+    </form>
+  </div>
+  
