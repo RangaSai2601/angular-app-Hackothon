@@ -47,6 +47,7 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit(): void {
+    console.log("test");
     if ('webkitSpeechRecognition' in window) {
       this.recognition = new window.webkitSpeechRecognition();
 
